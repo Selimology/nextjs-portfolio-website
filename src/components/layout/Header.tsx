@@ -1,17 +1,32 @@
-import { Heading, HStack } from '@chakra-ui/react';
+import { Heading, HStack, IconButton, useColorMode } from '@chakra-ui/react';
 import Link from 'next/link';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Header = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <HStack>
-      <Heading width="full" justifyContent={'space-between'}>
+    <HStack
+      as="nav"
+      width="full"
+      justifyContent="space-between"
+      alignItems="center"
+      py={4}
+    >
+      <Heading>
         <Link href="/">Kertekin. </Link>
       </Heading>
-      <HStack>
+
+      <HStack alignItems="center" spacing={2}>
         <Heading>Projects</Heading>
         <Heading>About</Heading>
         <Heading>Resume</Heading>
-        <Heading>Get in Touch!</Heading>
+        <Heading>Contact!</Heading>
+        <IconButton
+          aria-label="toggle the theme"
+          icon={colorMode === 'light' ? <FaMoon /> : <FaSun />}
+          onClick={toggleColorMode}
+        />
       </HStack>
     </HStack>
   );
