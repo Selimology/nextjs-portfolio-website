@@ -32,7 +32,7 @@ const Header = () => {
         </NextLink>
         <NextLink href="/" passHref>
           <Button size="md" variant="ghost">
-            About
+            Blog
           </Button>
         </NextLink>
         <NextLink href="/" passHref>
