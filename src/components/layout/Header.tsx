@@ -20,28 +20,28 @@ const Header = () => {
       alignItems="center"
       py={4}
     >
-      <Heading size="md">
+      <Heading size={{ base: 'sm', md: 'md' }}>
         <Link href="/">Kertekin.</Link>
       </Heading>
 
-      <HStack alignItems="center" spacing={2}>
+      <HStack alignItems="center" spacing={{ base: 0, md: 2 }}>
         <NextLink href="/" passHref>
-          <Button size="md" variant="ghost">
+          <Button size={{ base: 'sm', md: 'md' }} variant="ghost">
             Projects
           </Button>
         </NextLink>
         <NextLink href="/" passHref>
-          <Button size="md" variant="ghost">
+          <Button size={{ base: 'sm', md: 'md' }} variant="ghost">
             Blog
           </Button>
         </NextLink>
         <NextLink href="/" passHref>
-          <Button size="md" variant="ghost">
+          <Button size={{ base: 'sm', md: 'md' }} variant="ghost">
             Resume
           </Button>
         </NextLink>
         <NextLink href="/" passHref>
-          <Button size="md" variant="ghost">
+          <Button size={{ base: 'sm', md: 'md' }} variant="ghost">
             Contact
           </Button>
         </NextLink>
