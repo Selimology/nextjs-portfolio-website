@@ -1,6 +1,7 @@
 import { Stack, VStack, Divider, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import { LinkProps } from 'src/types/links';
 
 import {
   LINKEDIN_PROFILE,
@@ -9,7 +10,7 @@ import {
   YOUTUBE_PROFILE,
 } from '../../constants';
 
-const firstLinks = [
+const firstLinks: LinkProps[] = [
   {
     href: '/',
     label: 'Home',
@@ -35,20 +36,20 @@ const secondLinks = [
   },
   {
     href: GITHUB_PROFILE,
-    label: 'GitHub',
+    label: 'github',
   },
   // {
   //   href: YOUTUBE_PROFILE,
   //   label: 'YouTube',
   // },
 ];
+
 const Footer = () => {
   const { pathname } = useRouter();
 
   return (
     <VStack pb={8} spacing={8}>
       <Divider />
-
       <Stack
         direction={{ base: 'column', md: 'row' }}
         justifyContent="space-evenly"
@@ -57,20 +58,26 @@ const Footer = () => {
       >
         <VStack alignItems="flex-start">
           {firstLinks.map(({ href, label }) => (
-            <NextLink href={href} passHref key={href}>
-              <Link color={pathname === href ? 'teal.500' : 'gray.500'}>
-                {label}
-              </Link>
-            </NextLink>
+            <Link
+              key={href}
+              href={href}
+              color={pathname === href ? 'teal.500' : 'gray.500'}
+            >
+              {label}
+            </Link>
           ))}
         </VStack>
         <VStack alignItems="flex-start">
           {secondLinks.map(({ href, label }) => (
-            <NextLink href={href} passHref key={href}>
-              <Link isExternal target="_blank" color="gray.500">
-                {label}
-              </Link>
-            </NextLink>
+            <Link
+              href={href}
+              key={href}
+              isExternal={href.startsWith('http')}
+              target="_blank"
+              color="gray.500"
+            >
+              {label}
+            </Link>
           ))}
         </VStack>
       </Stack>
