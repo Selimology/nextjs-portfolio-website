@@ -36,23 +36,34 @@ const secondLinks = [
   },
   {
     href: GITHUB_PROFILE,
-    label: 'github',
+    label: 'Github',
   },
-  // {
-  //   href: YOUTUBE_PROFILE,
-  //   label: 'YouTube',
-  // },
+  {
+    href: YOUTUBE_PROFILE,
+    label: 'YouTube',
+  },
+];
+
+const thirdLinks: LinkProps[] = [
+  {
+    href: '/projects',
+    label: 'Projects',
+  },
+  {
+    href: '/contact',
+    label: 'Contact',
+  },
 ];
 
 const Footer = () => {
   const { pathname } = useRouter();
 
   return (
-    <VStack pb={8} spacing={8}>
+    <VStack pb={8} alignItems="flex-start" spacing={8}>
       <Divider />
       <Stack
         direction={{ base: 'column', md: 'row' }}
-        justifyContent="space-evenly"
+        justifyContent="space-between"
         w="full"
         spacing={{ base: 4, md: 8 }}
       >
@@ -75,6 +86,18 @@ const Footer = () => {
               isExternal={href.startsWith('http')}
               target="_blank"
               color="gray.500"
+            >
+              {label}
+            </Link>
+          ))}
+        </VStack>
+
+        <VStack alignItems="flex-start">
+          {thirdLinks.map(({ href, label }) => (
+            <Link
+              href={href}
+              key={href}
+              color={pathname === href ? 'teal.500' : 'gray.500'}
             >
               {label}
             </Link>
