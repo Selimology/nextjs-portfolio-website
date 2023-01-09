@@ -6,7 +6,15 @@ type ImageProps = NextImageProps & Omit<ChakraImageProps, 'src'>;
 
 const GeneralImage = chakra(NextImage, {
   shouldForwardProp: (prop) =>
-    ['src', 'layout', 'alt', 'placeholder'].includes(prop),
+    [
+      'src',
+      'layout',
+      'alt',
+      'placeholder',
+      'style',
+      'width',
+      'height',
+    ].includes(prop),
 });
 
 const Image = (props: ImageProps) => <GeneralImage {...props} />;

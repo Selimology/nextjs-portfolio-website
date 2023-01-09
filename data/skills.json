@@ -1,0 +1,60 @@
+{
+  "skills": [
+    {
+      "title": "React.js",
+      "icon": "/assets/images/react.svg",
+      "color": "#0BB0D1"
+    },
+
+    {
+      "title": "Javascript",
+      "icon": "/assets/images/javascript.svg",
+      "color": "#F7DF1E"
+    },
+    {
+      "title": "Typescript",
+      "icon": "/assets/images/typescript-icon.svg",
+      "color": "#3178c6"
+    },
+    {
+      "title": "Next.js",
+      "icon": "/assets/images/nextjs-icon.svg",
+      "color": ""
+    },
+    {
+      "title": "Chakra UI",
+      "icon": "/assets/images/chakraui.png",
+      "color": "#56cbd0"
+    },
+    {
+      "title": "Tailwind",
+      "icon": "/assets/images/tailwindcss-icon.svg",
+      "color": "#19b5ba"
+    },
+    {
+      "title": "GraphQL",
+      "icon": "/assets/images/graphql.svg",
+      "color": "#e535ab"
+    },
+    {
+      "title": "Vite",
+      "icon": "/assets/images/vitejs.svg",
+      "color": "#7f82fe"
+    },
+    {
+      "title": "Git",
+      "icon": "/assets/images/git-icon.svg",
+      "color": "#de4c36"
+    },
+    {
+      "title": "Redux",
+      "icon": "/assets/images/redux.svg",
+      "color": "#63459f"
+    },
+    {
+      "title": "MongoDB",
+      "icon": "/assets/images/mongodb-icon.svg",
+      "color": "#01ec64"
+    }
+  ]
+}

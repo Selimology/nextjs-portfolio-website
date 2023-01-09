@@ -1,85 +1,57 @@
-import ExternalLink from '@/components/externalLink';
-import {
-  VStack,
-  HStack,
-  Text,
-  Link,
-  Stack,
-  Heading,
-  Button,
-  Icon,
-} from '@chakra-ui/react';
-import { FiArrowUpRight } from 'react-icons/fi';
-import { LinkProps } from '@/types/links';
-import ProfileAvatar from '@/components/profileavatar';
+import HeroSection from '@/components/herosection';
+import { VStack, Heading, Stack, Grid } from '@chakra-ui/react';
+import { GetStaticProps } from 'next';
+import { Skills } from '@/types/skills';
+import { promises as fs } from 'fs';
+import path from 'path';
+import SkillCard from '@/components/skillcard';
 
-import {
-  LINKEDIN_PROFILE,
-  GITHUB_PROFILE,
-  TWITTER_PROFILE,
-  RESUME_LINK,
-} from 'src/constants';
+type SkillsProps = {
+  skills: Skills[];
+};
 
-type socialLinksProps = LinkProps & { color: string };
+type SkillsColorProps = SkillsProps & { color: string };
 
-const socialLinks: socialLinksProps[] = [
-  {
-    href: GITHUB_PROFILE,
-    label: 'Github',
-    color: 'github',
-  },
-  {
-    href: LINKEDIN_PROFILE,
-    label: 'LinkedIn',
-    color: 'linkedin',
-  },
-  {
-    href: TWITTER_PROFILE,
-    label: 'Twitter',
-    color: 'twitter',
-  },
-  {
-    href: RESUME_LINK,
-    label: 'Resume',
-    color: 'github',
-  },
-];
+//works only on /pages
+export const getStaticProps: GetStaticProps<SkillsProps> = async () => {
+  const jsonPath = path.join(process.cwd(), 'data/skills.json');
+  const skillsContent = await fs.readFile(jsonPath, 'utf8');
+  const { skills } = JSON.parse(skillsContent) as { skills: Skills[] };
+  const props: SkillsProps = {
+    skills,
+  };
 
-export default function Home() {
+  return {
+    props,
+  };
+};
+
+export default function Home({ skills }: SkillsProps) {
   return (
-    <VStack spacing={20}>
-      <Stack spacing={8} direction={{ base: 'column-reverse', md: 'row' }}>
-        <VStack spacing={2} alignItems="flex-start">
-          <Heading size="xl" pb={0}>
-            Kamil Ertekin.
-          </Heading>
+    <VStack w="full" spacing={8}>
+      <HeroSection />
+      <VStack w="full" alignItems="flex-start">
+        <Stack
+          spacing={8}
+          w="full"
+          alignItems={{ base: 'center', md: 'flex-start' }}
+        >
           <Heading size="md" fontWeight={'bold'}>
-            Frontend Developer
+            Skills & Technologies.
           </Heading>
-          <Text lineHeight="175%">
-            Passionate about building modern, responsive, and user-friendly
-            websites from scratch. My skills and experience allow me to create
-            dependable web experiences that exceed expectations.
-          </Text>
-
-          <HStack spacing={4}>
-            {socialLinks.map(({ href, label, color }) => (
-              <Button
-                as={Link}
-                href={href}
-                target="_blank"
-                color={color}
-                variant="ghost"
-                rightIcon={<Icon as={FiArrowUpRight} />}
-                key={href}
-              >
-                {label}
-              </Button>
+          <Grid
+            w="full"
+            justifyContent={{ base: 'center', md: 'flex-start' }}
+            alignItems="center"
+            templateColumns={{ base: 'repeat(2,1fr)', md: 'repeat(4,1fr)' }}
+            gap="5"
+          >
+            {skills.map((skill) => (
+              <SkillCard {...skill} key={skill.title} />
             ))}
-          </HStack>
-        </VStack>
-        <ProfileAvatar />
-      </Stack>
+          </Grid>
+        </Stack>
+      </VStack>
     </VStack>
   );
 }
