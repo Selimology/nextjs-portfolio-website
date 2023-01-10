@@ -14,6 +14,7 @@ const GeneralImage = chakra(NextImage, {
       'style',
       'width',
       'height',
+      'priority',
     ].includes(prop),
 });
 
