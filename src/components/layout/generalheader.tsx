@@ -6,8 +6,8 @@ import {
   Button,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import NextLink from 'next/link';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import NextLink from 'next/link';
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();

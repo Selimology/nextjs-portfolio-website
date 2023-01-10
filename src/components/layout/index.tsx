@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { Box, VStack, Container } from '@chakra-ui/react';
-import Header from './header';
+import Header from './generalheader';
 import Footer from './footer';
 
 type Props = PropsWithChildren<{}>;
