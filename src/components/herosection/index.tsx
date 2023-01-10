@@ -1,4 +1,4 @@
-import ExternalLink from '@/components/externalLink';
+import ExternalLink from '@/components/externallinks/externalLink';
 import {
   VStack,
   HStack,
@@ -33,11 +33,11 @@ const socialLinks: socialLinksProps[] = [
     label: 'LinkedIn',
     color: 'linkedin',
   },
-  {
-    href: TWITTER_PROFILE,
-    label: 'Twitter',
-    color: 'twitter',
-  },
+  // {
+  //   href: TWITTER_PROFILE,
+  //   label: 'Twitter',
+  //   color: 'twitter',
+  // },
   {
     href: RESUME_LINK,
     label: 'Resume',

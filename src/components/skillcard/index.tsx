@@ -33,7 +33,7 @@ const SkillCard = ({ title, icon, color }: SkillsProps) => {
           height="30"
           rounded="full"
           alt="title"
-        ></Image>
+        />
       </Text>
       <Text fontWeight="bold">{title}</Text>
     </Box>

@@ -15,13 +15,10 @@ const firstLinks: LinkProps[] = [
     href: '/',
     label: 'Home',
   },
+
   {
     href: '/blog',
     label: 'Blog',
-  },
-  {
-    href: '/about',
-    label: 'About',
   },
 ];
 
@@ -35,23 +32,23 @@ const secondLinks = [
     label: 'LinkedIn',
   },
   {
-    href: GITHUB_PROFILE,
-    label: 'Github',
-  },
-  {
     href: YOUTUBE_PROFILE,
     label: 'YouTube',
+  },
+  {
+    href: GITHUB_PROFILE,
+    label: 'Github',
   },
 ];
 
 const thirdLinks: LinkProps[] = [
   {
-    href: '/projects',
-    label: 'Projects',
-  },
-  {
     href: '/contact',
     label: 'Contact',
+  },
+  {
+    href: '/about',
+    label: 'About',
   },
 ];
 
