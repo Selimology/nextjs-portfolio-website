@@ -30,11 +30,11 @@ const Header = () => {
             Projects
           </Button>
         </NextLink>
-        <NextLink href="/" passHref>
+        {/* <NextLink href="/" passHref>
           <Button size={{ base: 'sm', md: 'md' }} variant="ghost">
             Blog
           </Button>
-        </NextLink>
+        </NextLink> */}
         <NextLink href="/" passHref>
           <Button size={{ base: 'sm', md: 'md' }} variant="ghost">
             Resume
