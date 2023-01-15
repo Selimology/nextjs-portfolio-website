@@ -31,9 +31,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 export default function Home({ skills, projects }: Props) {
   return (
-    <VStack w="full" spacing={8}>
+    <>
       <HeroSection />
       <SkillSection skills={skills} />
-    </VStack>
+    </>
   );
 }

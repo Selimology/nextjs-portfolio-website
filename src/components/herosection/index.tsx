@@ -55,10 +55,10 @@ const HeroSection = () => {
     >
       <VStack w="full" spacing={3} alignItems="flex-start">
         <Stack w="full" alignItems={{ base: 'center', md: 'flex-start' }}>
-          <Heading size="xl" pb={0}>
+          <Heading size="xl" pb={0} fontWeight="semibold">
             Kamil Ertekin.
           </Heading>
-          <Heading size="md" fontWeight={'bold'}>
+          <Heading size="md" fontWeight={'semibold'}>
             Frontend Developer
           </Heading>
         </Stack>
